@@ -1,17 +1,31 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {Step, StepStatus} from "../model/step";
 
 @Injectable({
   providedIn: 'root'
 })
 export class JddService {
 
-  steps: string[] = [];
-  addStep(step : string): void{
+  steps: Step[] = [];
+  addStep(step : Step): void{
     this.steps.push(step);
-    console.log(this.steps);
   }
   reset(): void{
     this.steps = [];
-    console.log(this.steps);
+  }
+  createJDD(): void {
+    for (let step of this.steps) {
+      let wait = Math.floor(Math.random() * 10);
+      console.log(step.type + " " + wait);
+      setTimeout(function (){
+        if(wait % 2 == 0) {
+
+          step.status = StepStatus.OK;
+        }
+        else {
+          step.status = StepStatus.KO;
+        }
+      }, wait * 1000)
+    }
   }
 }

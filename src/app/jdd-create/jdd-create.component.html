@@ -1,6 +1,10 @@
 <div>
 <h2>Création du JDD</h2>
   <ul>
-  <li *ngFor="let step of steps">{{step}}</li>
+    <li *ngFor="let step of steps">{{step.type}}
+      <span class="badge rounded-pill" [ngClass]="step.statusBadgeClass()"> {{step.status}}</span>
+      <span class="badge bg-light text-dark" *ngFor="let data of step.metaData">{{data}}</span>
+    </li>
   </ul>
 </div>
+
