@@ -44,6 +44,7 @@ export class JddChoiceComponent implements OnInit {
     if(this.model.mes){
       this.jddService.addStep( new Step(StepType.MES_SAP, [this.model.cad]));
       this.jddService.addStep( new Step(StepType.CREATION_CLIENT_G2C));
+      this.jddService.addStep(new Step(StepType.PASSAGE_ACTIF_G2C));
     }
     this.jddService.createJDD();
   }

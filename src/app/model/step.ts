@@ -4,7 +4,8 @@ export enum  StepType{
   POSE_QUEOPS = 'Pose QUEOPS',
   POSE_SAP = 'Pose SAP',
   MES_SAP = 'MES SAP',
-  CREATION_CLIENT_G2C = "Creation Client G2C"
+  CREATION_CLIENT_G2C = "Creation Client G2C",
+  PASSAGE_ACTIF_G2C = 'Passage du client à Actif G2C'
 }
 
 export enum StepStatus {
